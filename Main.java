@@ -7,6 +7,7 @@ import fabric.*;
 import observer.*;
 import singleton.*;
 import strategy.*;
+import mediator.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -77,5 +78,12 @@ public class Main {
 
         operator.handleRequest(RequestLevel.HIGH);
 
+        ChatMediator chat = new ChatMediator();
+        User alice = new User("Alice", chat);
+        User bob = new User("Bob", chat);
+
+        alice.sendMessage("Привет пидорас Вова");
+        bob.sendMessage("Да, я пидорас и что?");
+        
     }
 }

@@ -6,12 +6,12 @@ public class TransportFactory{
         Transport transport = null;
 
         switch (type){
-            case BIKE -> transport = new Bike();
-            case CAR -> transport = new Car();
-            case MOTORCYCLE -> transport = new Motorcycle();
-            default -> throw new IllegalArgumentException("Неизвестный тип транспорта: " + type);
+            case BIKE: transport = new Bike(); break;
+            case CAR: transport = new Car(); break;
+            case MOTORCYCLE: transport = new Motorcycle(); break;
+            default: throw new IllegalArgumentException("Неизвестный тип транспорта: " + type);
         }
-
+        
         System.out.println("Vsio pizdui nahui");
         return transport;
     }
