@@ -8,6 +8,6 @@ public class Manager extends AbstractHandler{
     
     @Override
     protected void process(RequestLevel requestLevel){
-        System.out.println("Manager ebanul zapross " + requestLevel + " urovnya");
+        System.out.println("Менеджер сделал запрос " + requestLevel + " уровня");
     }
 }

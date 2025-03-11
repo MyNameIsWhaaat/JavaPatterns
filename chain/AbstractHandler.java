@@ -12,10 +12,10 @@ public abstract class AbstractHandler {
             process(level);
         }else{
             if(nextHandler != null){
-                System.out.println(getClass().getSimpleName() + " peredaet zapros dalshe...");
+                System.out.println(getClass().getSimpleName() + " передает запрос дальше...");
                 nextHandler.handleRequest(level);
             }else{
-                System.out.println("Etot daun ne umeet etu huinu delat");
+                System.out.println("error");
             }
         }
     }

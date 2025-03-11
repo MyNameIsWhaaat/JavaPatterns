@@ -8,6 +8,6 @@ public class Director extends AbstractHandler{
     
     @Override
     protected void process(RequestLevel requestLevel){
-        System.out.println("Director ebanul zapross " + requestLevel + " urovnya");
+        System.out.println("Директор сделал запрос " + requestLevel + " уровня");
     }
 }

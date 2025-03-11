@@ -12,7 +12,6 @@ public class TransportFactory{
             default: throw new IllegalArgumentException("Неизвестный тип транспорта: " + type);
         }
         
-        System.out.println("Vsio pizdui nahui");
         return transport;
     }
 }

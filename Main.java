@@ -6,6 +6,7 @@ import decorator.*;
 import fabric.*;
 import observer.*;
 import singleton.*;
+import state.ATM;
 import strategy.*;
 import mediator.*;
 
@@ -82,8 +83,27 @@ public class Main {
         User alice = new User("Alice", chat);
         User bob = new User("Bob", chat);
 
-        alice.sendMessage("Привет пидорас Вова");
-        bob.sendMessage("Да, я пидорас и что?");
+        alice.sendMessage("Привет, Вова");
+        bob.sendMessage("Привет!");
+
+        //State//
+        ATM atm = new ATM();
+        
+        atm.insertCard();
+        
+        atm.enterPin(4321);
+        
+        atm.insertCard();
+        
+        atm.enterPin(1234);
+        
+        atm.requestCash(15000);
+        
+        atm.requestCash(5000);
+        
+        atm.ejectCard();
+        
+        atm.requestCash(1000);
         
     }
 }

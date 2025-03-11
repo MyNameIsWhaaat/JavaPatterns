@@ -8,6 +8,6 @@ public class Operator extends AbstractHandler{
     
     @Override
     protected void process(RequestLevel requestLevel){
-        System.out.println("Operator ebanul zapross " + requestLevel + " urovnya");
+        System.out.println("Оператор сделал запрос " + requestLevel + " уровня");
     }
 }
