@@ -9,6 +9,7 @@ import singleton.*;
 import state.ATM;
 import strategy.*;
 import mediator.*;
+import memento.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -90,20 +91,26 @@ public class Main {
         ATM atm = new ATM();
         
         atm.insertCard();
-        
         atm.enterPin(4321);
-        
         atm.insertCard();
-        
         atm.enterPin(1234);
-        
         atm.requestCash(15000);
-        
         atm.requestCash(5000);
-        
         atm.ejectCard();
-        
         atm.requestCash(1000);
         
+        TextEditor editor = new TextEditor();
+        History history = new History();
+
+        editor.write("Привет, мир!!");
+        history.save(editor);
+
+        editor.write("Привет, не мир!!");
+        history.save(editor);
+        
+        history.undo(editor);
+        history.redo(editor);
+
+
     }
 }
