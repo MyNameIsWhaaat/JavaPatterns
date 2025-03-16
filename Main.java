@@ -2,6 +2,7 @@ import adapter.*;
 import builder.*;
 import chain.*;
 import command.*;
+import composite.*;
 import decorator.*;
 import fabric.*;
 import observer.*;
@@ -128,5 +129,20 @@ public class Main {
 
         image.display();
         image.display();
+
+        FolderComponent root = new FolderComponent("Корень");
+        FolderComponent subFolder = new FolderComponent("Документы");
+        FolderComponent subFolder2 = new FolderComponent("Документы2");
+
+        FileComponent file1 = new FileComponent("Тезис.docx");
+        FileComponent file2 = new FileComponent("Фото.jpg");
+
+        subFolder.add(file1);
+        subFolder.add(subFolder2);
+        root.add(subFolder);
+        root.add(file2);
+
+        root.show("");
+
     }
 }
