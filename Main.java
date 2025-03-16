@@ -6,6 +6,7 @@ import composite.*;
 import decorator.*;
 import fabric.*;
 import observer.*;
+import prototype.CharacterPrototype;
 import proxy.Image;
 import proxy.ProxyImage;
 import singleton.*;
@@ -143,6 +144,12 @@ public class Main {
         root.add(file2);
 
         root.show("");
+
+        CharacterPrototype warrior = new CharacterPrototype("Рагнар", "Воин", new String[]{"Меч", "Щит"});
+        CharacterPrototype clonedWarrior = warrior.clone();
+
+        System.out.println(warrior);
+        System.out.println(clonedWarrior);
 
     }
 }
