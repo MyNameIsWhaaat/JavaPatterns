@@ -5,6 +5,8 @@ import command.*;
 import decorator.*;
 import fabric.*;
 import observer.*;
+import proxy.Image;
+import proxy.ProxyImage;
 import singleton.*;
 import state.ATM;
 import strategy.*;
@@ -121,5 +123,10 @@ public class Main {
         while (iterator.hasNext()) {
             System.out.println("Сейчас играет: " + iterator.next());
         }
+
+        Image image = new ProxyImage("Cat.jpg");
+
+        image.display();
+        image.display();
     }
 }
