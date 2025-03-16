@@ -10,6 +10,7 @@ import state.ATM;
 import strategy.*;
 import mediator.*;
 import memento.*;
+import iterator.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -111,6 +112,14 @@ public class Main {
         history.undo(editor);
         history.redo(editor);
 
+        PlayList playlist = new PlayList();
+        playlist.addSong("Imagine - John Lennon");
+        playlist.addSong("Bohemian Rhapsody - Queen");
+        playlist.addSong("Пошлая молли - Люимая песня твоей сестры");
 
+        Iterator<String> iterator = playlist.getIterator();
+        while (iterator.hasNext()) {
+            System.out.println("Сейчас играет: " + iterator.next());
+        }
     }
 }
