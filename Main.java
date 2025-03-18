@@ -17,6 +17,7 @@ import visitor.*;
 import mediator.*;
 import memento.*;
 import iterator.*;
+import interpreter.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -180,5 +181,16 @@ public class Main {
         tea.prepareBeverage();
         System.out.println("---");
         coffee2.prepareBeverage();
+
+        Expression expr = new AddExpression(
+            new NumberExpression(3),
+            new MultiplyExpression(
+            new NumberExpression(4),
+            new NumberExpression(5)
+            )
+        );
+        System.out.println(expr.interpret()); // 3 + (4 * 5) = 23
+
+        
     }
 }
