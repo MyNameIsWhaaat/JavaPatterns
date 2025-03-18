@@ -13,6 +13,12 @@ import proxy.ProxyImage;
 import singleton.*;
 import state.ATM;
 import strategy.*;
+import visitor.AreaVisitor;
+import visitor.Circle;
+import visitor.DrawVisitor;
+import visitor.Rectangle;
+import visitor.Shape;
+import visitor.Visitor;
 import mediator.*;
 import memento.*;
 import iterator.*;
@@ -161,5 +167,16 @@ public class Main {
         System.out.println(tree1);
         System.out.println(tree2);
 
+        Shape circle = new Circle(5);
+        Shape rectangle = new Rectangle(4, 6);
+
+        Visitor drawVisitor = new DrawVisitor();
+        Visitor areaVisitor = new AreaVisitor();
+
+        circle.accept(drawVisitor);
+        circle.accept(areaVisitor);
+
+        rectangle.accept(drawVisitor);
+        rectangle.accept(areaVisitor);
     }
 }
