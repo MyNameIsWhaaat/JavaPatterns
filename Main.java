@@ -7,18 +7,13 @@ import decorator.*;
 import fabric.*;
 import flyweight.*;
 import observer.*;
-import prototype.CharacterPrototype;
-import proxy.Image;
-import proxy.ProxyImage;
+import prototype.*;
+import proxy.*;
 import singleton.*;
 import state.ATM;
 import strategy.*;
-import visitor.AreaVisitor;
-import visitor.Circle;
-import visitor.DrawVisitor;
-import visitor.Rectangle;
-import visitor.Shape;
-import visitor.Visitor;
+import templateMethod.*;
+import visitor.*;
 import mediator.*;
 import memento.*;
 import iterator.*;
@@ -178,5 +173,12 @@ public class Main {
 
         rectangle.accept(drawVisitor);
         rectangle.accept(areaVisitor);
+
+        Beverage tea = new Tea();
+        Beverage coffee2 = new Coffeee();
+
+        tea.prepareBeverage();
+        System.out.println("---");
+        coffee2.prepareBeverage();
     }
 }
