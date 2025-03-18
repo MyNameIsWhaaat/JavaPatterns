@@ -6,6 +6,7 @@ import command.*;
 import composite.*;
 import decorator.*;
 import fabric.*;
+import facade.MediaFacade;
 import flyweight.*;
 import observer.*;
 import prototype.*;
@@ -200,5 +201,8 @@ public class Main {
 
         bridgeCircle.draw();   // Векторный рендеринг круга
         bridgeRectangle.draw(); // Растровый рендеринг прямоугольника
+
+        MediaFacade player = new MediaFacade();
+        player.play("movie.mp4");
     }
 }
