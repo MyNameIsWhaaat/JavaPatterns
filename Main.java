@@ -1,3 +1,4 @@
+import abstractFabric.*;
 import adapter.*;
 import bridge.*;
 import builder.*;
@@ -204,5 +205,17 @@ public class Main {
 
         MediaFacade player = new MediaFacade();
         player.play("movie.mp4");
+
+        GUIFactory factory;
+        
+        String os = System.getProperty("os.name").toLowerCase();
+        if (os.contains("mac")) {
+            factory = new MacFactory();
+        } else {
+            factory = new WindowsFactory();
+        }
+
+        Application app = new Application(factory);
+        app.createUI();
     }
 }
