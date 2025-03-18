@@ -5,6 +5,7 @@ import command.*;
 import composite.*;
 import decorator.*;
 import fabric.*;
+import flyweight.*;
 import observer.*;
 import prototype.CharacterPrototype;
 import proxy.Image;
@@ -150,6 +151,15 @@ public class Main {
 
         System.out.println(warrior);
         System.out.println(clonedWarrior);
+
+        TreeFactory.getTreeType("Дуб", "Зелёный", "Текстура-дуба.png");
+        TreeFactory.getTreeType("Сосна", "Тёмно-зелёный", "Текстура-сосны.png");
+
+        Tree tree1 = new Tree(10, 20, TreeFactory.getTreeType("Дуб", "Зелёный", "Текстура-дуба.png"));
+        Tree tree2 = new Tree(30, 50, TreeFactory.getTreeType("Дуб", "Зелёный", "Текстура-дуба.png"));
+
+        System.out.println(tree1);
+        System.out.println(tree2);
 
     }
 }
