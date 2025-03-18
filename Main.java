@@ -1,4 +1,5 @@
 import adapter.*;
+import bridge.*;
 import builder.*;
 import chain.*;
 import command.*;
@@ -191,6 +192,13 @@ public class Main {
         );
         System.out.println(expr.interpret()); // 3 + (4 * 5) = 23
 
-        
+        Renderer vectorRenderer = new VectorRenderer();
+        Renderer rasterRenderer = new RasterRenderer();
+
+        BridgeShape bridgeCircle = new BridgeCircle(vectorRenderer, 5);
+        BridgeShape bridgeRectangle = new BridgeRectangle(rasterRenderer, 10, 20);
+
+        bridgeCircle.draw();   // Векторный рендеринг круга
+        bridgeRectangle.draw(); // Растровый рендеринг прямоугольника
     }
 }
