@@ -217,5 +217,9 @@ public class Main {
 
         Application app = new Application(factory);
         app.createUI();
+
+        //Абстрактная фабрика возвращает интерфейс
+        //Фабрика возвращает объект
+        //Итерируемый светофор
     }
 }
