@@ -13,7 +13,7 @@ public class SongIterator implements Iterator<String>{
     @Override
     public boolean hasNext() {
         return position < songs.size();   
-     }
+    }
 
     @Override
     public String next(){
